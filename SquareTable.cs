@@ -28,16 +28,16 @@ namespace Robot
                 switch (Direction.CurrentDirection)
                 {
                     case 0:
-                    y = action("increase", y);                   
+                    y = action(Config.MoveForward, y);                   
                          break;
                     case 1:
-                        x = action("increase", x);
+                        x = action(Config.MoveForward, x);
                         break;
                     case 2:
-                        y = action("decrease", y);
+                        y = action(Config.MoveBackward, y);
                         break;
                     case 3:
-                        x = action("decrease", x);
+                        x = action(Config.MoveBackward, x);
                         break;
                     default:
                         break;
@@ -49,17 +49,31 @@ namespace Robot
 
         public static int action (string action, int position)
         {   
-            if( action == "increase")
+            if( action == Config.MoveForward)
             {
-                position = (position < 5 ? position + 1 : position);
+                position = (position < Config.MaxValue ? position + 1 : position);
             }
 
-            if( action == "decrease")
+            if( action == Config.MoveBackward)
             {
-                position = (position > 0 ? position- 1 : position);
+                position = (position > Config.MinValue ? position - 1 : position);
             }
 
             return position;
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // SquareTable
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "SquareTable";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
     }
 }

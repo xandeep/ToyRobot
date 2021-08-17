@@ -64,14 +64,14 @@ namespace Robot
 
             if (name == "btnRight")
             {
-                if (Direction.CurrentDirection != 3)
+                if (Direction.CurrentDirection != Config.West)
                 {
                     Direction.CurrentDirection++;
                 }
                 else
                 {
                     // if its 3, Direction will go back to 0 that is West to North
-                    Direction.CurrentDirection = 0;
+                    Direction.CurrentDirection = Config.North;
                 }
 
 
@@ -79,14 +79,14 @@ namespace Robot
 
             if (name == "btnLeft")
             {
-                if (Direction.CurrentDirection != 0)
+                if (Direction.CurrentDirection != Config.North)
                 {
                     Direction.CurrentDirection--;
                 }
                 else
                 {
                     // if its 0, Direction will go back to 3 that is  North to West
-                    Direction.CurrentDirection = 3;
+                    Direction.CurrentDirection = Config.West;
                 }
             }
             SetReport();
@@ -122,12 +122,12 @@ namespace Robot
 
 
         //Display Error Msg to User
-        private void ErrorMsg(string msg = ConfigMessages.InvalidCommand)
+        private void ErrorMsg(string msg = Config.InvalidCommand)
         {
 
             error.Text = msg;
             error.Visible = true;
-            if (msg == ConfigMessages.InvalidCommand)
+            if (msg == Config.InvalidCommand)
             {
                 btnMove.BackColor = Color.Red;
             }
@@ -164,12 +164,12 @@ namespace Robot
         {
             if (validInput())
             {
-                SquareTable.X = Convert.ToInt32(txtX.Text) >= 0 ? Convert.ToInt32(txtX.Text) : 0;
+                SquareTable.X =  Convert.ToInt32(txtX.Text);
             }
             else
             {
                 DisableBtns();
-                ErrorMsg(ConfigMessages.InvalidInput);
+                ErrorMsg(Config.InvalidInput);
             }
 
         }
@@ -178,12 +178,12 @@ namespace Robot
         {
             if (validInput())
             {
-                SquareTable.Y = Convert.ToInt32(txtY.Text) >= 0 ? Convert.ToInt32(txtY.Text) : 0;
+                SquareTable.Y = Convert.ToInt32(txtY.Text);
             }
             else
             {
                 DisableBtns();
-                ErrorMsg(ConfigMessages.InvalidInput);
+                ErrorMsg(Config.InvalidInput);
             }
 
         }
@@ -194,8 +194,8 @@ namespace Robot
             int result = 0;
             return (
                 int.TryParse(txtX.Text, out result) && int.TryParse(txtY.Text, out result)
-                && Convert.ToInt32(txtX.Text) < 6 && Convert.ToInt32(txtY.Text) < 6
-                && Convert.ToInt32(txtX.Text) >= 0 && Convert.ToInt32(txtY.Text) >= 0);
+                && Convert.ToInt32(txtX.Text) <= Config.MaxValue && Convert.ToInt32(txtY.Text) <= Config.MaxValue
+                && Convert.ToInt32(txtX.Text) >= Config.MinValue && Convert.ToInt32(txtY.Text) >= Config.MinValue);
 
         }
     }

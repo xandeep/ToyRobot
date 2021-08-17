@@ -18,3 +18,4 @@ F:\Dekstop\New folder\ToyRobot\obj\Debug\Robot.csproj.GenerateResource.cache
 F:\Dekstop\New folder\ToyRobot\obj\Debug\Robot.csproj.CoreCompileInputs.cache
 F:\Dekstop\New folder\ToyRobot\obj\Debug\Robot.exe
 F:\Dekstop\New folder\ToyRobot\obj\Debug\Robot.pdb
+F:\Dekstop\New folder\ToyRobot\obj\Debug\Robot.SquareTable.resources

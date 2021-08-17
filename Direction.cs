@@ -30,19 +30,19 @@ namespace Robot
             switch (btn)
             {
                 case "btnNorth":
-                    value = 0;
+                    value = Config.North;
                     break;
                 case "btnEast":
-                    value = 1;
+                    value = Config.East;
                     break;
                 case "btnSouth":
-                    value = 2;
+                    value = Config.South;
                     break;
                 case "btnWest":
-                    value = 3;
+                    value = Config.West;
                     break;
                 default:
-                    value = 0;  // default value NORTH if invalid input
+                    value = Config.North;  // default value NORTH if invalid input
                     break;
             }
 
@@ -56,20 +56,20 @@ namespace Robot
             string value;
             switch (code)
             {
-                case 0:
-                    value = "North";
+                case Config.North:
+                    value = Config.DirectionNorth;
                     break;
-                case 1:
-                    value = "East";
+                case Config.East:
+                    value = Config.DirectionEast;
                     break;
-                case 2:
-                    value = "South";
+                case Config.South:
+                    value = Config.DirectionSouth;
                     break;
-                case 3:
-                    value = "West";
+                case Config.West:
+                    value = Config.DirectionWest;
                     break;
                 default:
-                    value = "North"; // default value NORTH if invalid input
+                    value = Config.DirectionNorth; // default value NORTH if invalid input
                     break;
             }
 

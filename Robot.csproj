@@ -62,7 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConfigMessages.cs" />
+    <Compile Include="Config.cs" />
     <Compile Include="Direction.cs" />
     <Compile Include="Properties\Report.cs">
       <SubType>Form</SubType>
@@ -79,6 +79,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="SquareTable.resx">
+      <DependentUpon>SquareTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ToyRobot.resx">
       <DependentUpon>ToyRobot.cs</DependentUpon>
     </EmbeddedResource>
