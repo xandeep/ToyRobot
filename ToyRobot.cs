@@ -122,12 +122,12 @@ namespace Robot
 
 
         //Display Error Msg to User
-        private void ErrorMsg(string msg = "INVALID INPUT- COMMAND IGNORED")
+        private void ErrorMsg(string msg = ConfigMessages.InvalidCommand)
         {
 
             error.Text = msg;
             error.Visible = true;
-            if (msg == "INVALID INPUT- COMMAND IGNORED")
+            if (msg == ConfigMessages.InvalidCommand)
             {
                 btnMove.BackColor = Color.Red;
             }
@@ -169,7 +169,7 @@ namespace Robot
             else
             {
                 DisableBtns();
-                ErrorMsg("Please enter X/Y values between 0 - 5");
+                ErrorMsg(ConfigMessages.InvalidInput);
             }
 
         }
@@ -183,7 +183,7 @@ namespace Robot
             else
             {
                 DisableBtns();
-                ErrorMsg("Please enter X/Y values between 0 - 5");
+                ErrorMsg(ConfigMessages.InvalidInput);
             }
 
         }

@@ -62,6 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigMessages.cs" />
     <Compile Include="Direction.cs" />
     <Compile Include="Properties\Report.cs">
       <SubType>Form</SubType>
