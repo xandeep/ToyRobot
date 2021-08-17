@@ -79,9 +79,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="SquareTable.resx">
-      <DependentUpon>SquareTable.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ToyRobot.resx">
       <DependentUpon>ToyRobot.cs</DependentUpon>
     </EmbeddedResource>

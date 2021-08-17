@@ -27,16 +27,16 @@ namespace Robot
             
                 switch (Direction.CurrentDirection)
                 {
-                    case 0:
+                    case Config.North:
                     y = action(Config.MoveForward, y);                   
                          break;
-                    case 1:
+                    case Config.East:
                         x = action(Config.MoveForward, x);
                         break;
-                    case 2:
+                    case Config.South:
                         y = action(Config.MoveBackward, y);
                         break;
-                    case 3:
+                    case Config.West:
                         x = action(Config.MoveBackward, x);
                         break;
                     default:
@@ -62,18 +62,5 @@ namespace Robot
             return position;
         }
 
-        private void InitializeComponent()
-        {
-            this.SuspendLayout();
-            // 
-            // SquareTable
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "SquareTable";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
-        }
     }
 }
